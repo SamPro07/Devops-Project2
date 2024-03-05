@@ -47,8 +47,5 @@ workflows:
       - Update_manifest:
           requires:
             - build_and_push
-            - add_ssh_keys:
-            fingerprints: 
-            - "SHA256:qSsQVTcAv5b5XqkgVSvqXU1fE6CwmfwxmFHDdrDvKx8" 
       
 
