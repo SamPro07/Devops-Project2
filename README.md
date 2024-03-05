@@ -1,4 +1,4 @@
-# Provisioning the Amazon EKS cluster using Terraform
+# Provisioning the Amazon EKS cluster using Terraform with ArgoCD and CircleCI
 This repository contains the terraform file code, which we can use to provision the **Amazon EKS** cluster In this comprehensive project, I dive deep into the world of **GitOps and ArgoCD**, demonstrating how to implement these essential DevOps practices step by step by **dockerizing** the application and provisioning the infrastructure using **Terraform**(this repo).
 
 
@@ -67,6 +67,21 @@ Finally, HIT the below command to create the infrastructure...
 
 type yes, and it will prompt you for permission or use --auto-approve in the command above.
 
+Now make sure all the repo's youve cloned are now pushed to your own repo's and it is very vital that your github access token are configured to read and write. 
+
+All you have to do now is integrate your circleCI account with your github account. 
+
+next in the command line inside the the folder of Kube_manifest enter the code below:
+
+`kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml`
+
+`kubectl port-forward svc/argocd-server 8080:443 -n argocd`
+
+`kubectl get secret argocd-initial-admin-secret -n argocd -o yaml`
+
+`kubectl apply -f argo-manifest.yaml`
+
+this will log you into ArgoCD and your project will automatically be deployed.
 
 **This project contains Three GitHub repositories**
 
