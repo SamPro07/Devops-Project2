@@ -70,9 +70,9 @@ type yes, and it will prompt you for permission or use --auto-approve in the com
 
 **This project contains Three GitHub repositories**
 
-➡️ 
+➡️ (https://github.com/SamPro07/terraformfiles.git)
 
-➡️ 
+➡️ (https://github.com/SamPro07/Kube_manifest.git)
 
-➡️ 
+
 
