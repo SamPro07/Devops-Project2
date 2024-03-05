@@ -12,9 +12,9 @@ jobs:
           command: |
             version="build-$CIRCLE_BUILD_NUM"
             echo $version
-            docker build -t SamPro07/todo-app:$version .
+            docker build -t sampro07/todo-app:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-            docker push SamPro07/todo-app:$version
+            docker push sampro07/todo-app:$version
 
   Update_manifest:
     docker:
@@ -27,7 +27,7 @@ jobs:
           command: |
             TAG=$CIRCLE_BUILD_NUM
             ((TAG--))
-            git clone https://github.com/piyushsachdeva/kube_manifest.git
+            git clone https://github.com/SamPro07/kube_manifest.git
             git config --global user.email "samirkhot67@gmail.com"
             git config --global user.name "SamPro07"
             pwd
